@@ -8,6 +8,7 @@ group :development, :test do
   gem 'byebug'
   gem 'dotenv'
   gem 'overcommit'
+  gem 'reek'
   gem 'rubocop', require: false
 end
 
