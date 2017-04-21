@@ -39,3 +39,7 @@ Please post any bugs, questions, or ideas on our [issues page](https://github.co
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## License
+![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png "CC BY")
+This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
