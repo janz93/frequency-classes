@@ -1,5 +1,5 @@
 # frequency-classes
-Searchtool to return a words for a specfic frequency class
+Searchtool to return words for a specfic frequency class
 
 ## Features
 * Search words to a specific frequency class
