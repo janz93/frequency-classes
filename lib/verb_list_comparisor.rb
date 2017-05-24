@@ -38,6 +38,15 @@ class VerbListComparisor
     frequency_class
   end
 
+  def append_comparison_column
+    CSV.open(@csv_path, 'w', col_sep: ';') do |file|
+      file << @verb_list.headers
+      @verb_list.each do |row|
+        file << row
+      end
+    end
+  end
+
   def read_csv(csv_path)
     CSV.read(csv_path, col_sep: ';', headers: true)
   end
