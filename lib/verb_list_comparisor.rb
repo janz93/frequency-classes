@@ -1,11 +1,11 @@
 require 'csv'
 require 'active_record'
 require 'dotenv/load'
-require_relative 'frequenz_klassen_service'
+require_relative 'frequency_classes_service'
 
 class VerbListComparisor
   def initialize(csv_path)
-    @csv_table = read_csv(csv_path)
+    @csv_path = csv_path
     @frequency_classes_service = FrequencyClassesService.new
   end
 
@@ -48,7 +48,7 @@ class VerbListComparisor
     end
   end
 
-  def read_csv(csv_path)
-    CSV.read(csv_path, col_sep: ';', headers: true)
+  def read_csv
+    CSV.read(@csv_path, col_sep: ';', headers: true)
   end
 end
