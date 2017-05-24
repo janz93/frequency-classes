@@ -9,12 +9,13 @@ class VerbListComparisor
     @frequency_classes_service = FrequencyClassesService.new
   end
 
-  def compare_databases
-    @csv_table.each do |row|
-      word << row['Verb']
-      @deu_news_2012_1m_freqeuz_klassen_service.calculate(word)
-      @deu_news_2011_300m_freqeuz_klasse_service.calculate(word)
+  def compare_words_again_database(database)
+    setup_database(database)
+    @verb_list = read_csv
+    @verb_list.each do |row|
+      row << { database => compare_word(row['Verb']) }
     end
+    append_comparison_column
   end
 
   private
