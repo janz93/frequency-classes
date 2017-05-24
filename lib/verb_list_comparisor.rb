@@ -1,5 +1,5 @@
 require 'csv'
-require 'frequenz_klassen_service'
+require_relative 'frequenz_klassen_service'
 
 class VerbListComparisor
   def initialize(csv_path)

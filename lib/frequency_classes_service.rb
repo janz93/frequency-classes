@@ -1,4 +1,4 @@
-require 'word'
+require_relative 'word'
 
 class FrequencyClassesService
   def calculate(word)
