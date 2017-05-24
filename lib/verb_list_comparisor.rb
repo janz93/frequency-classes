@@ -29,6 +29,15 @@ class VerbListComparisor
     )
   end
 
+  def compare_word(word)
+    begin
+      frequency_class = @frequency_classes_service.calculate(word)
+    rescue NoMethodError
+      frequency_class = ''
+    end
+    frequency_class
+  end
+
   def read_csv(csv_path)
     CSV.read(csv_path, col_sep: ';', headers: true)
   end
