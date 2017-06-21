@@ -22,11 +22,7 @@ class VerbListComparisor
 
   def setup_database(database)
     ActiveRecord::Base.establish_connection(
-      adapter:  'mysql2',
-      host:     'localhost',
-      username: ENV['DATABASE_USER'],
-      password: ENV['DATABASE_PASSWORD'],
-      database: database
+      ENV['DATABASE_URL']
     )
   end
 
