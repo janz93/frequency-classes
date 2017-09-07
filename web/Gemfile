@@ -14,10 +14,14 @@ end
 
 group :test, :development do
   gem 'dotenv', '~> 2.0'
+  gem 'byebug'
+  gem 'rake'
+  gem 'reek'
+  gem 'rubocop', require: false
 end
 
 group :test do
-  gem 'minitest'
+  gem 'rspec'
   gem 'capybara'
 end
 
