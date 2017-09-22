@@ -1,0 +1,28 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: "3.1"
+services:
+  database:
+    image: mysql:5.7
+    container_name: frequency-mysql
+    working_dir: /application
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=deu_news_2011_10K
+      - MYSQL_USER=foo
+      - MYSQL_PASSWORD=bar
+    volumes:  # Mount relative path source folder on host to absolute path destination folder on docker container
+        - ./database:/docker-entrypoint-initdb.d
+
+  web:
+    build: ./web
+    command: sleep 500
+    volumes:
+      - ./web:/app
+    ports:
+      - "3000:3000"
+    links:
+      - database:mysql
+    environment:
+      - DATABASE_URL=mysql2://foo:bar@mysql/deu_news_2011_10K
