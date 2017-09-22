@@ -3,25 +3,22 @@
 ###############################################################################
 version: "3.1"
 services:
-  database_development:
+  database_test:
     image: mysql:5.7
     working_dir: /application
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=database_development
+      - MYSQL_DATABASE=database_test
       - MYSQL_USER=foo
       - MYSQL_PASSWORD=bar
     volumes:  # Mount relative path source folder on host to absolute path destination folder on docker container
-        - ./databases/database_development:/docker-entrypoint-initdb.d
+        - ./database_test:/docker-entrypoint-initdb.d
 
   web:
     build: ./web
-    command: bundle exec hanami server --host 0.0.0.0
     volumes:
       - ./web:/app
-    ports:
-      - "2300:2300"
     links:
-      - database_development:mysql
+      - database_test:mysql
     environment:
-      - DATABASE_URL=mysql2://foo:bar@mysql/database_development
+      - DATABASE_URL=mysql2://foo:bar@mysql/database_test

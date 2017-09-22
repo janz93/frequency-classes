@@ -1,4 +1,4 @@
-USE deu_news_2011_10K;
+USE database_development;
 
 CREATE TABLE `words` (
   `w_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
