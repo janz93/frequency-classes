@@ -1,4 +1,4 @@
-USE database_test;
+USE database;
 
 CREATE TABLE `words` (
   `w_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
