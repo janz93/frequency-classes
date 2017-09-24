@@ -60,6 +60,7 @@ GEM
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.11.0)
     equalizer (0.0.11)
+    fabrication (2.16.3)
     hanami (1.0.0)
       bundler (~> 1.13)
       concurrent-ruby (~> 1.0)
@@ -79,6 +80,9 @@ GEM
     hanami-controller (1.0.1)
       hanami-utils (~> 1.0)
       rack (~> 2.0)
+    hanami-fabrication (0.1.0)
+      fabrication (~> 2.16)
+      hanami-utils (< 2.0)
     hanami-helpers (1.0.0)
       hanami-utils (~> 1.0)
     hanami-mailer (1.0.0)
@@ -202,6 +206,7 @@ DEPENDENCIES
   capybara
   dotenv (~> 2.0)
   hanami (~> 1.0)
+  hanami-fabrication
   hanami-model (~> 1.0)
   mysql2
   rake
