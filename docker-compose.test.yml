@@ -3,12 +3,12 @@
 ###############################################################################
 version: "3.1"
 services:
-  database_test:
+  database:
     image: mysql:5.7
     working_dir: /application
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=database_test
+      - MYSQL_DATABASE=database 
       - MYSQL_USER=foo
       - MYSQL_PASSWORD=bar
     volumes:  # Mount relative path source folder on host to absolute path destination folder on docker container
@@ -19,6 +19,6 @@ services:
     volumes:
       - ./web:/app
     links:
-      - database_test:mysql
+      - database:mysql
     environment:
-      - DATABASE_URL=mysql2://foo:bar@mysql/database_test
+      - DATABASE_URL=mysql2://foo:bar@mysql/database
