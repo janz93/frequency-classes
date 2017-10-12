@@ -1,4 +1,4 @@
-USE database;
+USE frequency_classes;
 
 CREATE TABLE `words` (
   `w_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
