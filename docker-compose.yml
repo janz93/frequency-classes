@@ -8,7 +8,7 @@ services:
     working_dir: /application
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=database
+      - MYSQL_DATABASE=frequency_classes
       - MYSQL_USER=foo
       - MYSQL_PASSWORD=bar
     volumes:  # Mount relative path source folder on host to absolute path destination folder on docker container
@@ -24,4 +24,4 @@ services:
     links:
       - database:mysql
     environment:
-      - DATABASE_URL=mysql2://foo:bar@mysql/database
+      - DATABASE_URL=mysql2://foo:bar@mysql/frequency_classes
