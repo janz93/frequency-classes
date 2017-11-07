@@ -1,62 +1,62 @@
 USE database;
 
 CREATE TABLE `words` (
-  `w_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `word` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `word_ci` varchar(255) DEFAULT NULL,
   `freq` int(10) unsigned DEFAULT NULL,
-  PRIMARY KEY (`w_id`),
+  PRIMARY KEY (`id`),
   KEY `word` (`word`),
-  KEY `w_id` (`w_id`)
+  KEY `id` (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=39304 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `sentences` (
-  `s_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `sentence` text,
-  KEY `s_id` (`s_id`)
+  KEY `id` (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=10001 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `co_s` (
-  `w1_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `w2_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `word1_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `word2_id` int(10) unsigned NOT NULL DEFAULT '0',
   `freq` int(8) unsigned DEFAULT NULL,
   `sig` float DEFAULT NULL,
-  PRIMARY KEY (`w1_id`,`w2_id`),
-  KEY `w1_sig` (`w1_id`,`sig`),
-  KEY `w2_sig` (`w2_id`,`sig`)
+  PRIMARY KEY (`word1_id`,`word2_id`),
+  KEY `word1_sig` (`word1_id`,`sig`),
+  KEY `word2_sig` (`word2_id`,`sig`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `co_n` (
-  `w1_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `w2_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `word1_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `word2_id` int(10) unsigned NOT NULL DEFAULT '0',
   `freq` int(8) unsigned DEFAULT NULL,
   `sig` float DEFAULT NULL,
-  PRIMARY KEY (`w1_id`,`w2_id`),
-  KEY `w1_sig` (`w1_id`,`sig`),
-  KEY `w2_sig` (`w2_id`,`sig`)
+  PRIMARY KEY (`word1_id`,`word2_id`),
+  KEY `word1_sig` (`word1_id`,`sig`),
+  KEY `word2_sig` (`word2_id`,`sig`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `inv_w` (
-  `w_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `s_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `word_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `sentence_id` int(10) unsigned NOT NULL DEFAULT '0',
   `pos` mediumint(2) unsigned NOT NULL DEFAULT '0',
-  KEY `w_id` (`w_id`),
-  KEY `s_id` (`s_id`),
-  KEY `w_s` (`w_id`,`s_id`)
+  KEY `word_id` (`word_id`),
+  KEY `sentence_id` (`sentence_id`),
+  KEY `word_sentence` (`word_id`,`sentence_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `inv_so` (
-  `so_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `s_id` int(10) unsigned NOT NULL DEFAULT '0',
-  KEY `s_id` (`s_id`),
-  KEY `so_id` (`so_id`)
+  `source_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `sentence_id` int(10) unsigned NOT NULL DEFAULT '0',
+  KEY `sentence_id` (`sentence_id`),
+  KEY `source_id` (`source_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `sources` (
-  `so_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `source` varchar(255) DEFAULT NULL,
   `date` date DEFAULT NULL,
-  KEY `so_id` (`so_id`),
+  KEY `id` (`id`),
   KEY `date` (`date`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9939 DEFAULT CHARSET=utf8;
 
