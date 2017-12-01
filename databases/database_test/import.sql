@@ -17,7 +17,7 @@ CREATE TABLE `word_search_meta` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`wsm_id`),
-  KEY `w_id` (`w_id`),
+  KEY `w_id` (`w_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `sentences` (
