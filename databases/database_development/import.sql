@@ -11,13 +11,13 @@ CREATE TABLE `words` (
 ) ENGINE=MyISAM AUTO_INCREMENT=39304 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `word_search_meta` (
-  `wsm_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `frequency_class` int(3) DEFAULT NULL,
-  `w_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `word_id` int(10) unsigned NOT NULL DEFAULT '0',
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  PRIMARY KEY (`wsm_id`),
-  KEY `w_id` (`w_id`)
+  PRIMARY KEY (`id`),
+  KEY `word_id` (`word_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 CREATE TABLE `sentences` (
