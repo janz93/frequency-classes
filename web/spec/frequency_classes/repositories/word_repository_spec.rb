@@ -1,6 +1,4 @@
-require 'spec_helper'
-
-describe WordRepository do
+RSpec.describe WordRepository, type: :repository do
   it "#find_by_word" do
     word_repository = described_class.new
     hello = Fabricate(:word, word: "hello")

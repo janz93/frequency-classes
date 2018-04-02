@@ -10,7 +10,7 @@ CREATE TABLE `words` (
   KEY `id` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=39304 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `word_search_meta` (
+CREATE TABLE `word_meta` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `frequency_class` int(3) DEFAULT NULL,
   `word_id` int(10) unsigned NOT NULL DEFAULT '0',
