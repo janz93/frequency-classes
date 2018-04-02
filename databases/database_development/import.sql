@@ -8,7 +8,7 @@ CREATE TABLE `words` (
   PRIMARY KEY (`id`),
   KEY `word` (`word`),
   KEY `id` (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=39304 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39304 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `word_search_meta` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -18,13 +18,13 @@ CREATE TABLE `word_search_meta` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `word_id` (`word_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `sentences` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `sentence` text,
   KEY `id` (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10001 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10001 DEFAULT CHARSET=utf8;
 
 CREATE TABLE `co_s` (
   `word1_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -34,7 +34,7 @@ CREATE TABLE `co_s` (
   PRIMARY KEY (`word1_id`,`word2_id`),
   KEY `word1_sig` (`word1_id`,`sig`),
   KEY `word2_sig` (`word2_id`,`sig`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `co_n` (
   `word1_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -44,7 +44,7 @@ CREATE TABLE `co_n` (
   PRIMARY KEY (`word1_id`,`word2_id`),
   KEY `word1_sig` (`word1_id`,`sig`),
   KEY `word2_sig` (`word2_id`,`sig`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `inv_w` (
   `word_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -53,14 +53,14 @@ CREATE TABLE `inv_w` (
   KEY `word_id` (`word_id`),
   KEY `sentence_id` (`sentence_id`),
   KEY `word_sentence` (`word_id`,`sentence_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `inv_so` (
   `source_id` int(10) unsigned NOT NULL DEFAULT '0',
   `sentence_id` int(10) unsigned NOT NULL DEFAULT '0',
   KEY `sentence_id` (`sentence_id`),
   KEY `source_id` (`source_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `sources` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -68,7 +68,7 @@ CREATE TABLE `sources` (
   `date` date DEFAULT NULL,
   KEY `id` (`id`),
   KEY `date` (`date`)
-) ENGINE=MyISAM AUTO_INCREMENT=9939 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9939 DEFAULT CHARSET=utf8;
 
 ALTER TABLE `words` DISABLE KEYS;
 ALTER TABLE `sentences` DISABLE KEYS;
