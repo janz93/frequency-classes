@@ -1,4 +1,3 @@
-project=bookshelf
-architecture=container
-test=minitest
+project=frequency_classes
+test=rspec
 template=erb
