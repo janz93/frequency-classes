@@ -8,16 +8,13 @@ Searchtool to return words for a specific frequency class
 ## Requirements
 This project need the following environment in order to run
 
-- Ruby ~> 2.4.0
-- Bundle ~> 1.14.3
-- Mysql ~> 14.14
+- Docker version 18.03.0-ce, build 0520e24
+- docker-compose version 1.20.1, build 5d8c71b
 
 ## Installation
 1. `git clone git@github.com:janz93/frequency-classes.git`
 2. `cd frequency-classes`
-3. Add the `.env_sample` variables to your current environment
-4. `bundle install`
-5. `rake db:setup`
+3. `docker-compose up`
 
 ## Testing
 This is a TDD project.
