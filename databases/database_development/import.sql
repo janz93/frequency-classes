@@ -78,13 +78,13 @@ ALTER TABLE `inv_w` DISABLE KEYS;
 ALTER TABLE `inv_so` DISABLE KEYS;
 ALTER TABLE `sources` DISABLE KEYS;
 
-LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/words.txt' INTO TABLE words;
-LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/sentences.txt' INTO TABLE sentences;
-LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/co_s.txt' INTO TABLE co_s;
-LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/co_n.txt' INTO TABLE co_n;
-LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/inv_w.txt' INTO TABLE inv_w;
-LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/inv_so.txt' INTO TABLE inv_so;
-LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/sources.txt' INTO TABLE sources;
+LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/words.txt' INTO TABLE words CHARACTER SET UTF8;
+LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/sentences.txt' INTO TABLE sentences CHARACTER SET UTF8;
+LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/co_s.txt' INTO TABLE co_s CHARACTER SET UTF8;
+LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/co_n.txt' INTO TABLE co_n CHARACTER SET UTF8;
+LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/inv_w.txt' INTO TABLE inv_w CHARACTER SET UTF8;
+LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/inv_so.txt' INTO TABLE inv_so CHARACTER SET UTF8;
+LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/sources.txt' INTO TABLE sources CHARACTER SET UTF8;
 
 ALTER TABLE `words` ENABLE KEYS;
 ALTER TABLE `sentences` ENABLE KEYS;
