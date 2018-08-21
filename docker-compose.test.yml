@@ -14,10 +14,13 @@ services:
     volumes:  # Mount relative path source folder on host to absolute path destination folder on docker container
         - ./databases/database_test:/docker-entrypoint-initdb.d
 
+  # db:
+  #   image: postgres
+
   web:
     build: ./web
-    volumes:
-      - ./web:/app
+    entrypoint: "/usr/bin/test_entrypoint"
+    command: "bundle exec rspec"
     links:
       - database:mysql
     environment:
