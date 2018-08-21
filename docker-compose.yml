@@ -16,7 +16,6 @@ services:
 
   web:
     build: ./web
-    command: bundle exec hanami server --host 0.0.0.0
     volumes:
       - ./web:/app
     ports:

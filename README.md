@@ -14,7 +14,10 @@ This project need the following environment in order to run
 ## Installation
 1. `git clone git@github.com:janz93/frequency-classes.git`
 2. `cd frequency-classes`
+3. `docker-compose build --pull`
 3. `docker-compose up`
+
+`docker-compose ps` will tell you, on which local port the application binds.
 
 ## Testing
 This is a TDD project.
@@ -24,6 +27,11 @@ To fight bugs and have best practice code we use:
 * [Rspec](https://github.com/seattlerb/minitest)
 * [Rubocop](https://github.com/bbatsov/rubocop)
 * [Reek](https://github.com/troessner/reek)
+
+Launch tests
+
+    docker-compose build --pull
+    docker-compose -f docker-compose.test.yml run --rm web
 
 ## Bugs
 In case of finding bug:
