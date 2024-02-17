@@ -1,1 +1,30 @@
-web/Gemfile
+source 'https://rubygems.org'
+
+gem 'rake'
+gem 'hanami', '~> 1.2'
+gem 'hanami-model', '~> 1.2'
+
+gem 'mysql2'
+
+group :development do
+  # Code reloading
+  # See: http://hanamirb.org/guides/projects/code-reloading
+  gem 'shotgun'
+end
+
+group :test, :development do
+  gem 'dotenv', '~> 3.0'
+  gem 'byebug'
+  gem 'reek'
+  gem 'rubocop', require: false
+end
+
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'hanami-fabrication'
+end
+
+group :production do
+  # gem 'puma'
+end
